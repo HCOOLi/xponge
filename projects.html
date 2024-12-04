@@ -48,47 +48,47 @@
             {
                 "title": "深圳这座大厦，外墙会「呼吸」",
                 "image": "assets/projects/projects1.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484700&idx=1&sn=53b33847d0bd8ef82b9bdbd44f8647df&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "沁植毯技术打造「最美」街景墙",
                 "image": "assets/projects/projects2.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247485028&idx=1&sn=3e7e5eac44cd4dab58d6c7b886925950&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "三千平米边坡，一键复绿！",
                 "image": "assets/projects/projects3.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484929&idx=1&sn=d1d39c52dd221ece015a84e690bd447d&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "上海这个地广，火了……",
                 "image": "assets/projects/projects4.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484628&idx=1&sn=f85d9f76268d978148632e06bcec849a&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "高架桥底，不会枯死的绿植墙",
                 "image": "assets/projects/projects5.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484698&idx=1&sn=a2738a5086affb5ad2027d62d7088f50&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "墙上绿洲：室内空间的自然一角",
                 "image": "assets/projects/projects6.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484717&idx=1&sn=2fcca687ab84d9f61438f64451f38dc4&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "Xponge苔藓植物墙：洁净无土，科技生态",
                 "image": "assets/projects/projects7.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484972&idx=1&sn=68d89f7d7d897e2535deadd32a471557&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "室内绿化项目集锦：商超/大堂/校园/办公空间植物墙……",
                 "image": "assets/projects/projects8.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484955&idx=1&sn=8b105e4f5ed7cef951a1999b017642f0&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
             {
                 "title": "北京、上海数千平米无土草皮四季常绿",
                 "image": "assets/projects/projects9.webp",
-                "ref": ""
+                "ref": "https://mp.weixin.qq.com/s?__biz=Mzg2ODcyOTc3NA==&mid=2247484664&idx=1&sn=2e184d64fa66de076b763d708eef840d&scene=19&from=industrynews&version=4.1.31.6017&platform=win&nwr_flag=1#wechat_redirect"
             },
         ]
         const container = document.getElementById('waterfall-container');
@@ -100,6 +100,12 @@
             const img = document.createElement('img');
             img.src = item.image;
             img.alt = item.title;
+            // 添加点击事件
+            img.onclick = function() {
+                        if (item.ref) {
+                            window.location.href = item.ref;
+                        }
+                    };
 
             const h3 = document.createElement('h3');
             h3.textContent = item.title;
