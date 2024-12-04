@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
 </head>
 <body>
-    For detailed information or to request our catalog, please leave your message below.
-
-    Your Message
-    [Text box for message]
-
-    Your Email
-    [Text box for email]
-    Submit
-
+    <form action="email" method="post">
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
-
-
-
-

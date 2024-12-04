@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        .waterfall-container {
+            column-count: 3;
+            /* 将容器分为两列 */
+            column-gap: 20px;
+            /* 列之间的间隙 */
+        }
+
+        .item {
+            break-inside: avoid;
+            /* 避免元素在列之间断开 */
+            margin-bottom: 20px;
+            /* 元素之间的垂直间距 */
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        .item h3 {
+            margin: 5px 0; /* 为标题添加上下边距 */
+            font-size: 14px; /* 标题字体大小 */
+            text-align: center; /* 标题居中 */
+        }
+        .item img {
+           width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+          .waterfall-container {
+                column-count: 2; /* 移动端只显示一列 */
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="waterfall-container" id="waterfall-container">
+    </div>
+    <script>
+        const data = [
+            {
+                "title": "深圳这座大厦，外墙会「呼吸」",
+                "image": "assets/projects/projects1.webp",
+                "ref": ""
+            },
+            {
+                "title": "沁植毯技术打造「最美」街景墙",
+                "image": "assets/projects/projects2.webp",
+                "ref": ""
+            },
+            {
+                "title": "三千平米边坡，一键复绿！",
+                "image": "assets/projects/projects3.webp",
+                "ref": ""
+            },
+            {
+                "title": "上海这个地广，火了……",
+                "image": "assets/projects/projects4.webp",
+                "ref": ""
+            },
+            {
+                "title": "高架桥底，不会枯死的绿植墙",
+                "image": "assets/projects/projects5.webp",
+                "ref": ""
+            },
+            {
+                "title": "墙上绿洲：室内空间的自然一角",
+                "image": "assets/projects/projects6.webp",
+                "ref": ""
+            },
+            {
+                "title": "Xponge苔藓植物墙：洁净无土，科技生态",
+                "image": "assets/projects/projects7.webp",
+                "ref": ""
+            },
+            {
+                "title": "室内绿化项目集锦：商超/大堂/校园/办公空间植物墙……",
+                "image": "assets/projects/projects8.webp",
+                "ref": ""
+            },
+            {
+                "title": "北京、上海数千平米无土草皮四季常绿",
+                "image": "assets/projects/projects9.webp",
+                "ref": ""
+            },
+        ]
+        const container = document.getElementById('waterfall-container');
+
+        data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'item';
+
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = item.title;
+
+            const h3 = document.createElement('h3');
+            h3.textContent = item.title;
+
+            div.appendChild(img);
+            div.appendChild(h3);
+
+            container.appendChild(div);
+        });
+
+    </script>
+    
+
+</body>
+
+</html>

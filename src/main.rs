@@ -1,8 +1,17 @@
-use axum::{response::Html, routing::get, Router};
+use axum::{response::Html, routing::{get,post}, Router};
 use tower_http::services::ServeDir;
 use tokio::fs;
 use std::path::Path;
 use tokio::io::AsyncReadExt;
+use serde::Deserialize;
+
+
+#[derive(Deserialize)]
+struct MyData {
+    message: String,
+    email: String,
+}
+
 
 #[tokio::main]
 async fn main() {
@@ -11,6 +20,8 @@ async fn main() {
         // `GET /` goes to `root`
         .route("/", get(index_handler))
         .route("/contact", get(contact_handler))
+        .route("/projects", get(projects_handler))
+        // .route("/email", post(email_handler))
         .nest_service("/assets", ServeDir::new("assets"));
 
 
@@ -34,3 +45,19 @@ async fn contact_handler() -> Html<String> {
     file.read_to_string(&mut contents).await.unwrap();
     Html(contents)
 }
+
+async fn projects_handler() -> Html<String> {
+    let file_path = Path::new("projects.html");
+    let mut file = fs::File::open(file_path).await.unwrap();
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).await.unwrap();
+    Html(contents)
+}
+
+
+// async fn email_handler(headers: HeaderMap, form: Form<MyData>) -> Html<String> {
+//     println!("Headers: {:?}", headers);
+//     println!("Received message: {}", form.message);
+//     println!("Received email: {}", form.email);
+//     Html(String::from("Email received successfully"))
+// }
